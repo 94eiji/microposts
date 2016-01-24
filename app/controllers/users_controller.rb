@@ -48,5 +48,15 @@ class UsersController < ApplicationController
   # ユーザの情報を設定する
   def set_user
     @user = User.find(params[:id])
+    
+    # 自身以外のプロフィールを編集出来ないようにする
+    # urlを直接入力されると、不正アクセスできる
+    unless current_user == @user
+      flash[:danger] = "不正なアクセスがありました。再度ログインをしてください"
+      
+      # ログオフする
+      session[:user_id] = nil
+      redirect_to root_path
+    end
   end
 end

@@ -1,1 +1,33 @@
-<%= render 'form' %>
+<h1><%= gravatar_for @user %></h1>
+
+<%= form_for(@user, :html => {:class => 'form-horizontal'}) do |u| %>
+
+  <%= render 'shared/error_messages', object: u.object %>
+  
+  <div class="form-group">
+    <label for="inputName" class="col-sm-2 control-label">名前:</label>
+      <div class="col-sm-10">
+        <%= u.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">メールアドレス:</label>
+      <div class="col-sm-10">
+        <%= u.text_field :email, class: "form-control" %>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputArea" class="col-sm-2 control-label">地域:</label>
+      <div class="col-sm-10">
+        <%= u.select :area, area_list, class: "form-control" %>
+    </div>
+  </div>
+    
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= u.submit class: "btn btn-sm btn-primary" %>
+    </div>
+  </div>
+<% end %>

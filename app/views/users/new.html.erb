@@ -7,16 +7,16 @@
       <%= render 'shared/error_messages', object: u.object %>
 
       <%= u.label :name %>
-      <%= u.text_field :name %>
+      <%= u.text_field :name, class: 'form-control' %>
       
       <%= u.label :email %>
-      <%= u.text_field :email %>
+      <%= u.text_field :email, class: 'form-control' %>
       
       <%= u.label :password %>
-      <%= u.password_field :password %>
+      <%= u.password_field :password, class: 'form-control' %>
       
       <%= u.label :password_confirmation %>
-      <%= u.password_field :password_confirmation %>
+      <%= u.password_field :password_confirmation, class: 'form-control' %>
       
       <%= u.label :area %>
       <%= u.select :area, area_list, class: "form-control" %>
