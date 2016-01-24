@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get 'sessions/new'
+  #get 'sessions/new'
 
   #TOPページの設定
   root to: 'static_pages#home'

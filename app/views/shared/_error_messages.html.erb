@@ -1,11 +1,13 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
+    
+    <!-- エラー件数表示 -->
     <div class="alert alert-danger">
       The form contrains <%= pluralize(object.errors.count, "error") %>
     </div>
     <ul>
       
-      <!--エラメッセージと取り出して、リストで表示 -->
+      <!--エラメッセージを取り出して、リストで表示する -->
       <% object.errors.full_messages.each do |full_message| %>
         <li><%= full_message %></li>
       <% end %>

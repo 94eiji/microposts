@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   }
   
   # 名前に対するバリデーション
-  
   validates :name, presence: true, length: { maximum: 50 }
   
   # メールアドレスに対するバリデーション
@@ -16,6 +15,9 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+
+  # 地域に対するバリデーション                    
+  validates :area, presence: true, length: { minimum: 1, maximum: 16 }
 
   #パスワードのハッシュ化
   has_secure_password

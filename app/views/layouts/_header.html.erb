@@ -6,6 +6,7 @@
         <li><%= link_to 'Home',  root_path %></li>
         <li><%= link_to 'Help',  '#' %></li>
         
+        <!-- ログイン中のメニュー -->
         <% if logged_in? %>
           <li><%= link_to "Users", "#" %></li>
           <li class="dropdown">
@@ -21,6 +22,8 @@
               </li>
             </ul>
           </li>
+          
+          <!-- 未ログイン中のメニュー　-->
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>
