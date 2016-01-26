@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   # ユーザ詳細
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.order(created_at: :desc)
   end
   
   def new
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:success] = "ようこそ！ Twitterクローンへ"
-      redirect_to login_path
+      redirect_to @user
     else
       render 'new'
     end
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-
+  
   private
   
   # フォームの値を検査する

@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   # 地域に対するバリデーション                    
   validates :area, presence: true, length: { minimum: 1, maximum: 16 }
 
+  # 1 : n = user : microposts
+  has_many :microposts 
+
   #パスワードのハッシュ化
   has_secure_password
 end
