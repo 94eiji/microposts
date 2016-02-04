@@ -1,0 +1,7 @@
+<!-- Ajaxを有効にする remote: true -->
+<%= form_for(current_user.following_relationships.build, remote: true) do |f| %>
+
+  <!-- type="hidden" --> 
+  <div><%= hidden_field_tag :followed_id, @user.id %></div>
+  <%= f.submit "Follow", class: "btn btn-primary" %>
+<% end %>
