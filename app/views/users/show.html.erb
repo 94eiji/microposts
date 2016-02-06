@@ -6,6 +6,12 @@
         <%= @user.name %>
       </h1>
     </section>
+    
+    <section>
+      <%= link_to "#{@user.following_users.count}フォロー ", followings_user_path %>　
+      <%= link_to "#{@user.follower_users.count}フォロワー", followers_user_path %>
+    </section>
+
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>

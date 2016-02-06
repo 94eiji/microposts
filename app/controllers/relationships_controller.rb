@@ -5,12 +5,18 @@ class RelationshipsController < ApplicationController
   # 他のユーザをフォローする
   def create
     @user = User.find(params[:followed_id])
-    current_user.follow(@user)
+    
+    if current_user != @user
+      current_user.follow(@user)
+    end
   end
 
   # フロー中のユーザをアンフォローする
   def destroy
     @user = current_user.following_relationships.find(params[:id]).followed
-    current_user.unfollow(@user)
+    
+    if current_user != @user
+      current_user.unfollow(@user)
+    end
   end
 end
