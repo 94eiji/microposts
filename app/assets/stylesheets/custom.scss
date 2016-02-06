@@ -186,11 +186,19 @@ span.picture {
   }
 }
 
-.thumbnail img {
-  margin: 10px;
+.thumbnail {
+
+  img {
+    margin: 10px;
+  }
 }
 
-.caption p a {
-  margin: 10px;
+.caption {
+  
+  p {
+    a {
+      margin: 10px;
+    }
+  }
 }
 
