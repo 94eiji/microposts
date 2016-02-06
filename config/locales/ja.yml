@@ -209,3 +209,11 @@ ja:
         password: パスワード
         password_confirmation: 確認用パスワード
         area: 地域
+        
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
